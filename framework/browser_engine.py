@@ -8,8 +8,8 @@ class Browser(object):
     # 打开浏览器
     def open_browser(self):
         config = configparser.ConfigParser()
-        dir = os.path.abspath('.').split('src')[0]
-        config.read(dir + "/config/config.ini")
+        dir = os.path.abspath('.').split('case')[0]
+        config.read(dir + "/config/config.ini",encoding='UTF-8')
         browser = config.get("browserType", "browserName")
         url = config.get("testServer", "URL")
         if browser == "Firefox":
@@ -18,7 +18,8 @@ class Browser(object):
             self.driver = webdriver.Chrome()
         elif browser == "IE":
             self.driver = webdriver.Ie()
-        self.driver.set_window_size(1920, 1080)  # 分辨率
+        #self.driver.set_window_size(1920, 1080)  # 分辨率
+        self.driver.maximize_window()
         # self.driver.maximize_window()#最大化
         self.driver.get(url)
         return self.driver

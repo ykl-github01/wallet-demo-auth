@@ -14,7 +14,7 @@ class Logger(object):
         # 创建一个handler，用于写入日志文件
         rq = time.strftime('%Y%m%d%H%M', time.localtime(time.time()))
 
-        log_dir = os.path.abspath('.').split('src')[0] + '/logs/'
+        log_dir = os.path.abspath('.').split('case')[0]+'/logs/'
         log_name = log_dir + rq + '.log'
         fh = logging.FileHandler(log_name)
 
