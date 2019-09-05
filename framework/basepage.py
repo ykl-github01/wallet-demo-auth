@@ -19,10 +19,10 @@ class BasePage(object):
     # 查找元素
     def find_element(self, selector):
         element = ''
-        if '=>' not in selector:
+        if '=' not in selector:
             return self.driver.find_element_by_id(selector)
-        selector_by = selector.split('=>')[0]
-        selector_value = selector.split('=>')[1]
+        selector_by = selector.split('=')[0]
+        selector_value = selector.split('=')[1]
         if selector_by == 'id':
             try:
                 element = self.driver.find_element_by_id(selector_value)
