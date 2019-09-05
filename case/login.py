@@ -1,6 +1,5 @@
 from framework.browser_engine import Browser
 from framework.basepage import BasePage
-from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -10,14 +9,13 @@ import win32api
 import time
 
 driver=Browser().open_browser()
-b=BasePage(driver) #creat BasePage instance
-
+driver.get('http://192.168.1.141:3000/')
 wait = WebDriverWait(driver, 10)
 temp = wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="LoadFromFileId"]')))
-a=ActionChains(driver)
-a.move_to_element(temp)
-a.click()
-a.perform()
+driver.find_element_by_xpath('//*[@id="LoadFromFileId"]').send_keys(r'E:\t_login\UTC--2019-09-04T07-58-04-244Z--24Wyp1K7nztULsaGHWSC68QiLvRPY9K5WYFCo2yxnCVpKdGsU7c8ouzjqt5joJuQhMDds9hNMPVjg1TM8MCXLrbz')
+time.sleep(3)
+
+
 '''
 dialog = win32gui.FindWindow('#32770', u'文件上传')
 ComboBoxEx = win32gui.FindWindowEx(dialog, 0, 'ComboBoxEx32', None)

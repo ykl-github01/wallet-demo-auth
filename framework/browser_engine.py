@@ -11,7 +11,7 @@ class Browser(object):
         dir = os.path.abspath('.').split('case')[0]
         config.read(dir + "/config/config.ini",encoding='UTF-8')
         browser = config.get("browserType", "browserName")
-        url = config.get("testServer", "URL")
+        #url = config.get("testServer", "URL")
         if browser == "Firefox":
             self.driver = webdriver.Firefox()
         elif browser == "Chrome":
@@ -20,8 +20,7 @@ class Browser(object):
             self.driver = webdriver.Ie()
         #self.driver.set_window_size(1920, 1080)  # 分辨率
         self.driver.maximize_window()
-        # self.driver.maximize_window()#最大化
-        self.driver.get(url)
+        #self.driver.get(url)
         return self.driver
 
         # 打开url站点
