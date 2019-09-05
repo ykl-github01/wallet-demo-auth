@@ -3,17 +3,24 @@ from framework.basepage import BasePage
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
+import configparser,os
 import win32gui
 import win32con
 import win32api
 import time
+class Login():
+    def login(self):
+        driver=Browser().open_browser()
+        driver.get('http://192.168.1.141:3000/')
+        config = configparser.ConfigParser()
+        dir = os.path.abspath('.').split('case')[0]
+        config.read(dir + "/config/config.ini", encoding='UTF-8')
+        v1 = config.get("file_Address", "address")
+        wait = WebDriverWait(driver, 10)
+        wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="LoadFromFileId"]')))
+        driver.find_element_by_xpath('//*[@id="LoadFromFileId"]').send_keys(v1)
+        time.sleep(5)
 
-driver=Browser().open_browser()
-driver.get('http://192.168.1.141:3000/')
-wait = WebDriverWait(driver, 10)
-temp = wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="LoadFromFileId"]')))
-driver.find_element_by_xpath('//*[@id="LoadFromFileId"]').send_keys(r'E:\t_login\UTC--2019-09-04T07-58-04-244Z--24Wyp1K7nztULsaGHWSC68QiLvRPY9K5WYFCo2yxnCVpKdGsU7c8ouzjqt5joJuQhMDds9hNMPVjg1TM8MCXLrbz')
-time.sleep(3)
 
 
 '''
