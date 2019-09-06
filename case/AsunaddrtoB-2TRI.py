@@ -22,8 +22,5 @@ try:
     time.sleep(2)
     driver.switch_to_alert().accept()
     driver.find_element_by_xpath('//*[@id="refreshCurrentBalanceButton"]').click()
-    time.sleep(5)
 except Exception as e:
     print(e)
-
-driver.quit()
