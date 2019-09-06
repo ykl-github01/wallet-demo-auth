@@ -1,6 +1,5 @@
 from framework.browser_engine import Browser
 from framework.basepage import BasePage
-import time
 import configparser,os
 from framework.getconf import GetConf
 
