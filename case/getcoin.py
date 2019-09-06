@@ -25,5 +25,4 @@ creat 100 coin
 '''
 for i in range(100):
     bs.find_element('classname<=>content-form-signup').click()
-    time.sleep(1)
 driver.quit()
