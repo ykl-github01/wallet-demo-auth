@@ -2,7 +2,7 @@ from framework.browser_engine import Browser
 from framework.basepage import BasePage
 import time
 import configparser,os
-from framework.getconf import GetConf
+
 
 driver=Browser().open_browser()
 bs=BasePage(driver)
@@ -15,7 +15,7 @@ w1 = config.get("theWallets", "wallet1")
 time.sleep(2)
 bs.find_element('name<=>user').send_keys(w1)
 time.sleep(2)
-label=driver.find_element_by_xpath('/html/body/div/div/form/div[2]/label').click()
+driver.find_element_by_xpath('/html/body/div/div/form/div[2]/label').click()
 time.sleep(2)
 
 '''

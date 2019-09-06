@@ -15,7 +15,7 @@ w2 = config.get("theWallets", "wallet2")
 try:
     driver.find_element_by_xpath("/html/body/div[2]/div[1]/div[4]/div[1]/input").send_keys(w2)
     time.sleep(1)
-    driver.find_element_by_id('utxoNormalAmountId').send_keys(200)
+    driver.find_element_by_id('utxoNormalAmountId').send_keys(500)
     time.sleep(1)
     driver.find_element_by_id('normalTransferButtonId').click()
     time.sleep(2)
