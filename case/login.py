@@ -20,6 +20,7 @@ class Login():
         wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="LoadFromFileId"]')))
         driver.find_element_by_xpath('//*[@id="LoadFromFileId"]').send_keys(v1)
         time.sleep(5)
+        return driver
 
 
 
