@@ -4,7 +4,7 @@ import configparser,os
 import time
 
 '''
-A隐私地址转B 3TRI
+A隐私地址转B 7TRI
 '''
 driver=Login().login()
 bs=BasePage(driver)

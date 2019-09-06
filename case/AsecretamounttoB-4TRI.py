@@ -4,7 +4,7 @@ import configparser,os
 import time
 
 '''
-A明文转B 2TRI
+A隐私金额转B 4TRI
 '''
 driver=Login().login()
 bs=BasePage(driver)
