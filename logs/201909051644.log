@@ -1,2 +1,0 @@
-2019-09-05 16:45:01,547 - BasePage - ERROR - NoSuchElementException: Message: Given xpath expression "//*[@id" is invalid: SyntaxError: The expression is not a legal expression.
-

@@ -1,6 +1,5 @@
 import xlrd
 
-
 class ReadExcle(object):
     '''
     classdoc
@@ -72,24 +71,11 @@ class ReadExcle(object):
         return table.cell(i, j).value
 
     '''
-               读取给定列数，如读取该表中第3列~5列
+               读取给定列数，如读取该表中第3
     '''
 
-    def read_ncols(self, sheetname, ncols, n=1, num=1000):  # i,sheet索引
+    def read_ncols(self, sheetname,i):  # i,sheet索引
         ExcelFile = xlrd.open_workbook(self.file)
         table = ExcelFile.sheet_by_name(sheetname)
-        nrows = table.nrows  # 行数
-        ncols = table.ncols  # 列数
-        j = 0  # 循环次数
-        for row in range(1, nrows):
-            j += 1
-            line = []
-            if self.tag == 'True':
-                for col in range(0, ncols):
-                    line.append(table.cell(row, col).value)
-                yield line
-            elif self.tag == 'False':
-                if j >= n and j < n + num:
-                    for col in range(0, ncols):
-                        line.append(table.cell(row, col).value)
-                    yield line
+        lins=table.col_values(i)
+        return lins
