@@ -11,9 +11,11 @@ class GetCoin():
         config = configparser.ConfigParser()
         #dir = os.path.abspath('.').split('case')[0]
         #config.read(dir + "/config/config.ini", encoding='UTF-8')
-        config.read("../config/config.ini", encoding='UTF-8')
-        w1 = config.get("theWallets", "wallet1")
-        driver.find_element_by_name('user').send_keys(w1)
+        #config.read("../config/config.ini", encoding='UTF-8')
+        #w1 = config.get("theWallets", "wallet1")
+        a=GetConf().getconf('theWallets','wallet1')
+        print(a)
+        driver.find_element_by_name('user').send_keys(a)
         '''
         待调试
         g=GetConf()

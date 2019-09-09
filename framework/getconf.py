@@ -8,3 +8,8 @@ class GetConf():
         config.read(dir + "/config/config.ini", encoding='UTF-8')
         conf= config.get(se, value)
         return conf
+
+
+if __name__ == '__main__':
+    a=GetConf().getconf('theWallets','wallet1')
+    print(a)
