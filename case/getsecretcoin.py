@@ -10,8 +10,8 @@ class GetSecretCoin():
         driver.get('http://192.168.1.141:3001/')
 
         config = configparser.ConfigParser()
-        dir = os.path.abspath('.').split('case')[0]
-        config.read(dir + "/config/config.ini", encoding='UTF-8')
+        #dir = os.path.abspath('.').split('case')[0]
+        config.read("../config/config.ini", encoding='UTF-8')
         w1 = config.get("theWallets", "wallet1")
         time.sleep(2)
         bs.find_element('name<=>user').send_keys(w1)
