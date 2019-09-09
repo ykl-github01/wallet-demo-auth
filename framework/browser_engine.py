@@ -8,8 +8,9 @@ class Browser(object):
     # 打开浏览器
     def open_browser(self):
         config = configparser.ConfigParser()
-        dir = os.path.abspath('.').split('case')[0]
-        config.read(dir + "/config/config.ini",encoding='UTF-8')
+        #dir = os.path.abspath('.').split('case')[0]
+        #config.read(dir + "/config/config.ini",encoding='UTF-8')
+        config.read("../config/config.ini", encoding='UTF-8')
         browser = config.get("browserType", "browserName")
         #url = config.get("testServer", "URL")
         if browser == "Firefox":

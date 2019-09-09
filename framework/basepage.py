@@ -7,12 +7,9 @@ from selenium.webdriver.common.keys import Keys
 from random import choice
 from framework.logger import Logger
 
-logger = Logger("BasePage").getlog()
-
-
+logger = Logger().getlog()
 class BasePage(object):
     "定义一个页面基类，让所有页面都继承这个类，封装一些常用的页面操作方法到这个类"
-
     def __init__(self, driver):
         self.driver = driver
 
