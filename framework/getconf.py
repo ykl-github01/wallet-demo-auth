@@ -1,11 +1,11 @@
 import configparser
 import os
-
+dir = os.path.abspath('.').split('framework')[0]
+url=dir + "/config/config.ini"
 class GetConf():
     def __init__(self):
         self.config = configparser.ConfigParser()
-        dir = os.path.abspath('.').split('framework')[0]
-        self.config.read(dir + "/config/config.ini", encoding='UTF-8')
+        self.config.read(url)
 
     def getwallet(self,name):
         value=self.config.get('theWallets',name)
