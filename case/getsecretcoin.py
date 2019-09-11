@@ -1,8 +1,8 @@
 from framework.browser_engine import Browser
 from framework.basepage import BasePage
 import time
-import configparser,os
 import framework.getconf
+
 class GetSecretCoin():
     def getsecretcoin(self):
         driver=Browser().open_browser()
@@ -32,6 +32,3 @@ class GetSecretCoin():
         for i in range(0,10):
             bs.find_element('classname<=>content-form-signup').click()
         driver.quit()
-
-if __name__ == '__main__':
-    GetSecretCoin().getsecretcoin()
