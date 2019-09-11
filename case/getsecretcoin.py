@@ -2,17 +2,17 @@ from framework.browser_engine import Browser
 from framework.basepage import BasePage
 import time
 import configparser,os
-
+import framework.getconf
 class GetSecretCoin():
     def getsecretcoin(self):
         driver=Browser().open_browser()
         bs=BasePage(driver)
         driver.get('http://192.168.1.141:3001/')
-
-        config = configparser.ConfigParser()
-        #dir = os.path.abspath('.').split('case')[0]
-        config.read("../config/config.ini", encoding='UTF-8')
-        w1 = config.get("theWallets", "wallet1")
+        w1=framework.getconf.GetConf().getwallet('wallet1')
+        # config = configparser.ConfigParser()
+        # #dir = os.path.abspath('.').split('case')[0]
+        # config.read("../config/config.ini", encoding='UTF-8')
+        # w1 = config.get("theWallets", "wallet1")
         time.sleep(2)
         bs.find_element('name<=>user').send_keys(w1)
         time.sleep(2)
@@ -32,3 +32,6 @@ class GetSecretCoin():
         for i in range(0,10):
             bs.find_element('classname<=>content-form-signup').click()
         driver.quit()
+
+if __name__ == '__main__':
+    GetSecretCoin().getsecretcoin()
