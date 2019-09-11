@@ -2,14 +2,11 @@ import configparser
 import os
 
 class GetConf():
-    def getconf(self,se,value):
-        config = configparser.ConfigParser()
+    def __init__(self):
+        self.config = configparser.ConfigParser()
         dir = os.path.abspath('.').split('framework')[0]
-        config.read(dir + "/config/config.ini", encoding='UTF-8')
-        conf= config.get(se, value)
-        return conf
+        self.config.read(dir + "/config/config.ini", encoding='UTF-8')
 
-
-if __name__ == '__main__':
-    a=GetConf().getconf('theWallets','wallet1')
-    print(a)
+    def getwallet(self,name):
+        value=self.config.get('theWallets',name)
+        return value
