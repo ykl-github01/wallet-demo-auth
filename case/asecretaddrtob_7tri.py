@@ -1,4 +1,5 @@
 from framework.basepage import BasePage
+from framework.getfilename import GetFileName
 from case.login import Login
 import configparser,os
 import time
@@ -9,11 +10,13 @@ class AsecretaaddrtoB_7TRI():
         A隐私地址转B 7TRI
         '''
         driver=Login().login()
+        files=GetFileName().getfilename()
+        w2=files[1].split('--')[2]
         bs=BasePage(driver)
-        config = configparser.ConfigParser()
-        dir = os.path.abspath('.').split('case')[0]
-        config.read("../config/config.ini", encoding='UTF-8')
-        w2 = config.get("theWallets", "wallet2")
+        # config = configparser.ConfigParser()
+        # dir = os.path.abspath('.').split('case')[0]
+        # config.read("../config/config.ini", encoding='UTF-8')
+        # w2 = config.get("theWallets", "wallet2")
         try:
             driver.find_element_by_xpath("//*[@id='utxoPrivacyDestAddressId']").send_keys(w2)
             driver.implicitly_wait(1)

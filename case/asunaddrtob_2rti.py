@@ -2,6 +2,7 @@ from framework.basepage import BasePage
 from case.login import Login
 import configparser,os
 import time
+from framework.getfilename import GetFileName
 
 class AsunaddrtoB_2TRI():
     def asunaddrtob_2tri(self):
@@ -11,11 +12,13 @@ class AsunaddrtoB_2TRI():
         driver=Login().login()
         bs=BasePage(driver)
         config = configparser.ConfigParser()
-        dir = os.path.abspath('.').split('case')[0]
-        config.read( "../config/config.ini", encoding='UTF-8')
-        w2 = config.get("theWallets", "wallet2")
+        files=GetFileName().getfilename()
+        v=files[1].split('--')[2]
+        # dir = os.path.abspath('.').split('case')[0]
+        # config.read( "../config/config.ini", encoding='UTF-8')
+        # w2 = config.get("theWallets", "wallet2")
         try:
-            driver.find_element_by_xpath("/html/body/div[2]/div[1]/div[4]/div[1]/input").send_keys(w2)
+            driver.find_element_by_xpath("/html/body/div[2]/div[1]/div[4]/div[1]/input").send_keys(v)
             time.sleep(2)
             driver.find_element_by_id('utxoNormalAmountId').send_keys(200)
             time.sleep(2)

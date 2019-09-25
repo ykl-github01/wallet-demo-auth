@@ -3,6 +3,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 import configparser,os
+from framework.getfilename import GetFileName
 import win32gui
 import win32con
 import win32api
@@ -13,8 +14,10 @@ class Login():
         driver.get('http://192.168.1.141:3000/')
         config = configparser.ConfigParser()
         #dir = os.path.abspath('.').split('case')[0]
-        config.read("../config/config.ini", encoding='UTF-8')
-        v1 = config.get("file_Address", "address")
+        #config.read("../config/config.ini", encoding='UTF-8')
+        #v1 = config.get("file_Address", "address")
+        files=GetFileName().getfilename()
+        v1='E:\\t_login\\'+files[0]
         wait = WebDriverWait(driver, 10)
         wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="LoadFromFileId"]')))
         driver.find_element_by_xpath('//*[@id="LoadFromFileId"]').send_keys(v1)
