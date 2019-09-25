@@ -24,7 +24,7 @@ class AsunaddrtoB_5TRI():
             driver.implicitly_wait(1)
             #driver.switch_to_alert().accept()
             driver.find_element_by_xpath('//*[@id="refreshCurrentBalanceButton"]').click()
-            time.sleep(10)
+            time.sleep(30)
         except Exception as e:
             print(e)
 

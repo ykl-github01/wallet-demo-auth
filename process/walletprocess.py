@@ -17,10 +17,10 @@ import os
 class Walletprocess(unittest.TestCase):
         def setUp(self):
             pass
-        def test_creat_wallet1(self):
+        def test_0creat_wallet(self):
             case.creat_wallet.CreatWallet().creat_wallet()
             print('创建钱包成功')
-        def test_creat_wallet2(self):
+        def test_1creat_wallet(self):
             case.creat_wallet.CreatWallet().creat_wallet()
             print('创建钱包成功')
         def test_2getcoin(self):
@@ -61,8 +61,8 @@ if __name__ == '__main__':
     fp = open(filename, 'wb')
 
     testsuite=unittest.TestSuite()
-    testsuite.addTest(Walletprocess('test_creat_wallet1'))
-    testsuite.addTest(Walletprocess('test_creat_wallet2'))
+    testsuite.addTest(Walletprocess('test_0creat_wallet'))
+    testsuite.addTest(Walletprocess('test_1creat_wallet'))
     testsuite.addTest(Walletprocess('test_2getcoin'))
     testsuite.addTest(Walletprocess('test_3getsecretcoin'))
     testsuite.addTest(Walletprocess('test_4asunaddrtob_2tri'))

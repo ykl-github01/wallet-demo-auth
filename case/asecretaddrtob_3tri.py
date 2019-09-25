@@ -19,7 +19,7 @@ class AsecretaaddrtoB_3TRI():
         # w2 = config.get("theWallets", "wallet2")
         try:
             driver.find_element_by_xpath("//*[@id='utxoPrivacyDestAddressId']").send_keys(w2)
-            time.sleep(1)
+            time.sleep(3)
             driver.find_element_by_id('utxoPrivacyAmountId').send_keys(300)
             time.sleep(1)
             driver.find_element_by_id('privacyTransferButtonId').click()
