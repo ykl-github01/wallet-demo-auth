@@ -1,6 +1,6 @@
 import HTMLTestReportCN
 import case.creat_wallet
-import case.getcoin
+from case.getcoin import GetCoin
 from case.asecretaddrtob_3tri import AsecretaaddrtoB_3TRI
 from case.asecretaddramounttob_6rti import AsecretamounttoB_6TRI
 from case.asecretamounttob_4tri import AsecretamounttoB_4TRI
@@ -17,11 +17,8 @@ import os
 class Walletprocess(unittest.TestCase):
         def setUp(self):
             pass
-        def test_1creat_wallet(self):
-            case.creat_wallet.CreatWallet().creat_wallet()
-            print('创建钱包成功')
         def test_2getcoin(self):
-            case.getcoin.GetCoin().getcoin()
+            GetCoin().getcoin()
             print('获取币成功')
         def test_3getsecretcoin(self):
             GetSecretCoin().getsecretcoin()
@@ -58,7 +55,6 @@ if __name__ == '__main__':
     fp = open(filename, 'wb')
 
     testsuite=unittest.TestSuite()
-    testsuite.addTest(Walletprocess('test_1creat_wallet'))
     testsuite.addTest(Walletprocess('test_2getcoin'))
     testsuite.addTest(Walletprocess('test_3getsecretcoin'))
     testsuite.addTest(Walletprocess('test_4asunaddrtob_2tri'))
