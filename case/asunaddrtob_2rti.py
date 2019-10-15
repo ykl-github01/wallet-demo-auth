@@ -5,7 +5,7 @@ import time
 from framework.getfilename import GetFileName
 
 class AsunaddrtoB_2TRI():
-    def asunaddrtob_2tri(self):
+    def asunaddrtob_2tri(self,tri):
         '''
         A明文转B 2TRI
         '''
@@ -20,7 +20,7 @@ class AsunaddrtoB_2TRI():
         try:
             driver.find_element_by_xpath("/html/body/div[2]/div[1]/div[4]/div[1]/input").send_keys(v)
             time.sleep(3)
-            driver.find_element_by_id('utxoNormalAmountId').send_keys(200)
+            driver.find_element_by_id('utxoNormalAmountId').send_keys(tri)
             time.sleep(2)
             driver.find_element_by_id('normalTransferButtonId').click()
             time.sleep(2)

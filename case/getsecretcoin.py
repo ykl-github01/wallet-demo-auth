@@ -17,6 +17,6 @@ class GetSecretCoin():
         time.sleep(2)
         driver.find_element_by_xpath('/html/body/div/div/form/div[2]/label').click()
         time.sleep(2)
-        for i in range(0,10):
+        for i in range(1):
             bs.find_element('classname<=>content-form-signup').click()
         driver.quit()

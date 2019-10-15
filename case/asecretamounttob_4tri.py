@@ -4,7 +4,7 @@ from case.login import Login
 import configparser,os
 import time
 class AsecretamounttoB_4TRI():
-    def asecretamounttob_4tri(self):
+    def asecretamounttob_4tri(self,tri):
         '''
         A隐私金额转B 4TRI
         '''
@@ -19,7 +19,7 @@ class AsecretamounttoB_4TRI():
         try:
             driver.find_element_by_xpath("/html/body/div[2]/div[1]/div[4]/div[1]/input").send_keys(w2)
             driver.implicitly_wait(3)
-            driver.find_element_by_id('utxoNormalAmountId').send_keys(400)
+            driver.find_element_by_id('utxoNormalAmountId').send_keys(tri)
             driver.implicitly_wait(1)
             bs.find_element('id<=>hideNormalAmount').click()
             driver.implicitly_wait(1)

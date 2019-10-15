@@ -5,9 +5,9 @@ import configparser,os
 import time
 
 class AsecretamounttoB_6TRI():
-    def asecretamounttob_6tri(self):
+    def asecretamounttob_6tri(self,tri):
         '''
-        A隐藏地址隐私金额转B 6TRI
+        A隐藏地址隐私金额转B TRI
         '''
         driver=Login().login()
         bs=BasePage(driver)
@@ -20,7 +20,7 @@ class AsecretamounttoB_6TRI():
         try:
             driver.find_element_by_xpath("/html/body/div[2]/div[1]/div[4]/div[1]/input").send_keys(w2)
             driver.implicitly_wait(1)
-            driver.find_element_by_id('utxoNormalAmountId').send_keys(600)
+            driver.find_element_by_id('utxoNormalAmountId').send_keys(tri)
             driver.implicitly_wait(1)
             bs.find_element('id<=>hidePrivacyAmount').click()
             driver.implicitly_wait(1)

@@ -28,6 +28,6 @@ class GetCoin():
         '''
         creat 100 coin
         '''
-        for i in range(10):
+        for i in range(1):
             bs.find_element('classname<=>content-form-signup').click()
         driver.quit()

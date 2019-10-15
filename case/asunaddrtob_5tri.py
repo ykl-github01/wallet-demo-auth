@@ -3,7 +3,7 @@ from case.login import Login
 import configparser,os
 import time
 class AsunaddrtoB_5TRI():
-    def asunaddrtob_5tri(self):
+    def asunaddrtob_5tri(self,tri):
         '''
         A明文转B 5TRI
         '''
@@ -18,7 +18,7 @@ class AsunaddrtoB_5TRI():
         try:
             driver.find_element_by_xpath("/html/body/div[2]/div[1]/div[4]/div[1]/input").send_keys(w2)
             driver.implicitly_wait(1)
-            driver.find_element_by_id('utxoNormalAmountId').send_keys(500)
+            driver.find_element_by_id('utxoNormalAmountId').send_keys(tri)
             driver.implicitly_wait(1)
             driver.find_element_by_id('normalTransferButtonId').click()
             driver.implicitly_wait(1)

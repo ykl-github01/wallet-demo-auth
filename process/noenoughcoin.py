@@ -30,22 +30,22 @@ class Walletprocess(unittest.TestCase):
             GetSecretCoin().getsecretcoin()
             print('获取隐私币成功')
         def test_4asunaddrtob_2tri(self):
-            AsunaddrtoB_2TRI().asunaddrtob_2tri(2)
+            AsunaddrtoB_2TRI().asunaddrtob_2tri(200)
             print('A明文地址转B 2个TRI币成功')
         def test_5asecretaddrtob_3tri(self):
-            AsecretaaddrtoB_3TRI().asecretaddrtob_3tri(3)
+            AsecretaaddrtoB_3TRI().asecretaddrtob_3tri(300)
             print('A隐藏地址转B 3个TRI币成功')
         def test_6asecretamounttob_4tri(self):
-            AsecretamounttoB_4TRI().asecretamounttob_4tri(4)
+            AsecretamounttoB_4TRI().asecretamounttob_4tri(400)
             print('A隐藏金额转B 4个TRI币成功')
         def test_7asunaddrtob_5tri(self):
-            AsunaddrtoB_5TRI().asunaddrtob_5tri(5)
+            AsunaddrtoB_5TRI().asunaddrtob_5tri(500)
             print('A明文地址转B 5个TRI币成功')
         def test_8asecretaddramounttob_6rti(self):
-            AsecretamounttoB_6TRI().asecretamounttob_6tri(6)
+            AsecretamounttoB_6TRI().asecretamounttob_6tri(600)
             print('A隐私地址隐私金额转B 6个TRI币成功')
         def test_9asecretaddrtob_7tri(self):
-            AsecretaaddrtoB_7TRI().asecretaddrtob_7tri(7)
+            AsecretaaddrtoB_7TRI().asecretaddrtob_7tri(700)
             print('A隐私地址转B 7个TRI币成功')
         def tearDown(self):
             pass

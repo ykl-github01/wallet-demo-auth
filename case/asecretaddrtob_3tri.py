@@ -5,7 +5,7 @@ import configparser,os
 import time
 
 class AsecretaaddrtoB_3TRI():
-    def asecretaddrtob_3tri(self):
+    def asecretaddrtob_3tri(self,tri):
         '''
         A隐私地址转B 3TRI
         '''
@@ -20,7 +20,7 @@ class AsecretaaddrtoB_3TRI():
         try:
             driver.find_element_by_xpath("//*[@id='utxoPrivacyDestAddressId']").send_keys(w2)
             time.sleep(3)
-            driver.find_element_by_id('utxoPrivacyAmountId').send_keys(300)
+            driver.find_element_by_id('utxoPrivacyAmountId').send_keys(tri)
             time.sleep(1)
             driver.find_element_by_id('privacyTransferButtonId').click()
             time.sleep(1)
